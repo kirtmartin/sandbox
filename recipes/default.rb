@@ -11,3 +11,9 @@ package 'httpd'
 service 'httpd' do
   action [:enable, :start]
 end
+
+version = node['sandbox']['version']
+
+puts "*******************"
+puts "Version: " + version
+puts "*******************"

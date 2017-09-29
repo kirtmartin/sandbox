@@ -4,13 +4,9 @@
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
 
-# Install Required Packages
-package 'httpd'
+include_recipe 'sandbox::_create_users_and_groups'
 
-# Start and enable Apache
-service 'httpd' do
-  action [:enable, :start]
-end
+include_recipe 'sandbox::_install_apache'
 
 version = node['sandbox']['version']
 

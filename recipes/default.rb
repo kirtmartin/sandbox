@@ -13,3 +13,8 @@ version = node['sandbox']['version']
 puts "*******************"
 puts "Version: " + version
 puts "*******************"
+
+puts "*******************"
+puts File.dirname(__FILE__)
+puts __FILE__
+puts "*******************"

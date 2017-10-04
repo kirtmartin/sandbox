@@ -10,7 +10,11 @@ include_recipe 'sandbox::_install_apache'
 
 include_recipe 'sandbox::_create_directory'
 
-include_recipe 'sandbox::_create_from_remote_file'
+include_recipe 'sandbox::_create_file'
+
+include_recipe 'sandbox::_bash_copy_file'
+
+include_recipe 'sandbox::_symbolic_link'
 
 version = node['sandbox']['version']
 

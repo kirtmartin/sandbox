@@ -4,6 +4,9 @@
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
 
+# The sandbox cookbook runs a series of samples that I've written
+# that are meant for training purposes and library reference.
+
 include_recipe 'sandbox::_create_users_and_groups'
 
 include_recipe 'sandbox::_install_apache'
@@ -16,13 +19,22 @@ include_recipe 'sandbox::_bash_copy_file'
 
 include_recipe 'sandbox::_symbolic_link'
 
+include_recipe 'sandbox::_ruby_code'
+
 version = node['sandbox']['version']
 
-puts "*******************"
+puts
+puts "******** START VERSION ***********"
 puts "Version: " + version
-puts "*******************"
-
-puts "*******************"
+puts "******** END VERSION   ***********"
+puts
+puts "******** START FILE INFO ***********"
 puts File.dirname(__FILE__)
 puts __FILE__
-puts "*******************"
+puts "******** END FILE INFO   ***********"
+puts
+
+Chef::Log.warn("***** LOG INFO START ****")
+Chef::Log.warn(File.dirname(__FILE__))
+Chef::Log.warn(__FILE__)
+Chef::Log.warn("***** LOG INFO END   ****")

@@ -17,21 +17,23 @@ include_recipe 'sandbox::_create_file'
 
 include_recipe 'sandbox::_bash_copy_file'
 
+include_recipe 'sandbox::_template_file'
+
 include_recipe 'sandbox::_symbolic_link'
 
 include_recipe 'sandbox::_ruby_code'
 
 puts
-puts "******** START VERSION ***********"
-puts "Version: #{node['sandbox']['version']}"
-puts "******** END VERSION   ***********"
+puts "******** START ORIGINAL CHANGE ME ***********"
+puts "Change me: #{node['sandbox']['change_me']}"
+puts "******** END ORIGINAL CHANGE ME   ***********"
 
-include_recipe 'sandbox::_update_version'
+include_recipe 'sandbox::_update_change_me'
 
 puts
-puts "******** START UPDATED VERSION ***********"
-puts "Version: #{node['sandbox']['version']}"
-puts "******** END UPDATED VERSION   ***********"
+puts "******** START UPDATED CHANGE ME ***********"
+puts "Change me: #{node['sandbox']['change_me']}"
+puts "******** END UPDATED CHANGE ME   ***********"
 
 puts
 puts "******** START FILE INFO ***********"

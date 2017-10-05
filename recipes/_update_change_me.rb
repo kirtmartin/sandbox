@@ -4,4 +4,4 @@
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
 
-node.default['sandbox']['version'] = "1.0.0"
+node.default['sandbox']['change_me'] = "New Value"

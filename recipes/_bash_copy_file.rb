@@ -1,7 +1,7 @@
 bash 'copy_file' do
   user 'root'
-  cwd '/var/opt/test_directory'
+  cwd node['sandbox']['test_directory']
   code <<-EOH
-  cp test.txt test2.txt
+  cp #{node['sandbox']['test_file_name']} #{node['sandbox']['test_file_name2']}
   EOH
 end

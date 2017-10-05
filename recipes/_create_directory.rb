@@ -1,4 +1,4 @@
-directory '/var/opt/test_directory' do
+directory node['sandbox']['test_directory'] do
   owner 'root'
   group 'root'
   mode '0755'

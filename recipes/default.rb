@@ -21,12 +21,18 @@ include_recipe 'sandbox::_symbolic_link'
 
 include_recipe 'sandbox::_ruby_code'
 
-version = node['sandbox']['version']
-
 puts
 puts "******** START VERSION ***********"
-puts "Version: " + version
+puts "Version: #{node['sandbox']['version']}"
 puts "******** END VERSION   ***********"
+
+include_recipe 'sandbox::_update_version'
+
+puts
+puts "******** START UPDATED VERSION ***********"
+puts "Version: #{node['sandbox']['version']}"
+puts "******** END UPDATED VERSION   ***********"
+
 puts
 puts "******** START FILE INFO ***********"
 puts File.dirname(__FILE__)
@@ -34,7 +40,7 @@ puts __FILE__
 puts "******** END FILE INFO   ***********"
 puts
 
-Chef::Log.warn("***** LOG INFO START ****")
-Chef::Log.warn(File.dirname(__FILE__))
-Chef::Log.warn(__FILE__)
-Chef::Log.warn("***** LOG INFO END   ****")
+# Chef::Log.warn("***** LOG INFO START ****")
+# Chef::Log.warn(File.dirname(__FILE__))
+# Chef::Log.warn(__FILE__)
+# Chef::Log.warn("***** LOG INFO END   ****")

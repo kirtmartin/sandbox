@@ -40,7 +40,7 @@ end
 puts
 
 # Case statement
-input_value = rand(100)
+input_value = rand(125)
 
 case input_value
 when 1..33
@@ -52,6 +52,31 @@ when 67..100
 else
   puts "#{input_value}, outside of the range!"
 end
+
+# Ruby Class Example
+class Car
+  def initialize(make, model)
+    @make = make
+    @model = model
+  end
+
+  def display
+    puts
+    puts "This car is a #{@make} #{@model}"
+    puts
+  end
+end
+
+my_car = Car.new("Ford", "SHO")
+
+my_car2 = Car.new("Ford", "F150")
+
+puts
+puts "****** MY CAR CLASS START ******"
+my_car.display
+my_car2.display
+puts "****** MY CAR CLASS END ********"
+puts
 
 puts
 puts "******** END RUBY CODE EXAMPLES **********"
